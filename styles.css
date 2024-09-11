@@ -22,16 +22,25 @@ body {
   gap: 0.9vh;
 }
 
+.main {
+  display: flex;
+  margin-top: 5vh;
+  gap: 10vh;
+}
+
 .book-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  background-color: #5e2222;
-  padding: 2%;
+  align-items: center;
+  background-image: url("./images/book-cover.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1.5%;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 180px;
+  min-width: 200px;
+  max-width: 200px;
   height: 250px;
   color: white;
   gap: 1vh;
@@ -42,7 +51,21 @@ p {
   color: hsla(0, 0%, 90%, 0.9);
 }
 
-.row-info {
-  display: flex;
-  gap: 1vh;
+.readBtn {
+  color: white;
+  padding: 1vh;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addBtn {
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
