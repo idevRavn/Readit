@@ -15,7 +15,8 @@ function addBookToLibrary(book) {
 
 book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, true);
 addBookToLibrary(book1);
-console.log(myLibrary);
+book2 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, false);
+addBookToLibrary(book2);
 
 function displayBooks() {
   myLibrary.forEach((book) => {
@@ -27,8 +28,37 @@ function displayBooks() {
     title.classList.add("title");
     cardDiv.appendChild(title);
 
+    const author = document.createElement("p");
+    author.textContent = `Author: ${book.author}`;
+    author.classList.add("author");
+    cardDiv.appendChild(author);
+
+    const pages = document.createElement("p");
+    pages.textContent = `Pages: ${book.pages}`;
+    pages.classList.add("pages");
+    cardDiv.appendChild(pages);
+
+    const read = document.createElement("button");
+    read.textContent = book.read ? "Read" : "Not Read";
+    read.style.backgroundColor = book.read ? "green" : "red";
+    read.addEventListener("click", () => {
+      book.read = !book.read;
+      read.textContent = book.read ? "Read" : "Not Read";
+      read.style.backgroundColor = book.read ? "green" : "red";
+    });
+    read.classList.add("readBtn");
+    cardDiv.appendChild(read);
+
     booksContainer.appendChild(cardDiv);
   });
+  const addBtn = document.createElement("div");
+  addBtn.classList.add("book-card");
+  const add = document.createElement("button");
+  add.textContent = "+";
+  add.addEventListener("click", () => {});
+  add.classList.add("addBtn");
+  addBtn.appendChild(add);
+  booksContainer.appendChild(addBtn);
 }
 
 displayBooks();
