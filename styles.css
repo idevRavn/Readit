@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f1f1f1;
+  padding: 2%;
+  min-height: 100vh;
+}
+
+.header {
+  font-family: monospace;
+  color: #5e2222;
+  font-size: small;
+  display: flex;
+  align-items: center;
+  gap: 0.9vh;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #5e2222;
+  padding: 2%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 180px;
+  height: 250px;
+  color: white;
+  gap: 1vh;
+}
+
+p {
+  font-size: small;
+  color: hsla(0, 0%, 90%, 0.9);
+}
+
+.row-info {
+  display: flex;
+  gap: 1vh;
+}
