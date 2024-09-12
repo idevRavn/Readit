@@ -1,4 +1,7 @@
 const booksContainer = document.querySelector(".main");
+const bookDialog = document.querySelector("#bookDialog");
+const bookForm = document.querySelector("#bookForm");
+const cancelBtn = document.querySelector("#cancelBtn");
 
 const myLibrary = [];
 
@@ -55,10 +58,18 @@ function displayBooks() {
   addBtn.classList.add("book-card");
   const add = document.createElement("button");
   add.textContent = "+";
-  add.addEventListener("click", () => {});
+  add.addEventListener("click", () => {
+    bookDialog.showModal();
+  });
   add.classList.add("addBtn");
   addBtn.appendChild(add);
   booksContainer.appendChild(addBtn);
 }
 
 displayBooks();
+
+cancelBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  bookDialog.close();
+  bookForm.reset();
+});
