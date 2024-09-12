@@ -69,3 +69,47 @@ p {
   border-radius: 50%;
   cursor: pointer;
 }
+
+#bookDialog {
+  border: none;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#bookForm {
+  padding: 5vh;
+  background-color: white;
+}
+
+.formVal {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.formBtns > button {
+  margin-top: 5%;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+}
+
+#cancelBtn {
+  background-color: hsl(0, 100%, 40%);
+}
+
+#submitBtn {
+  background-color: hsl(120, 100%, 40%);
+}
+
+#cancelBtn:hover {
+  background-color: hsl(0, 100%, 50%);
+}
+
+#submitBtn:hover {
+  background-color: hsl(120, 100%, 50%);
+}
