@@ -22,6 +22,24 @@ body {
   gap: 0.9vh;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vh;
+}
+
+.right > p {
+  color: black;
+}
+
 .main {
   display: flex;
   margin-top: 5vh;
