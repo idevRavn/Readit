@@ -1,10 +1,14 @@
 const booksContainer = document.querySelector(".main");
 const bookDialog = document.querySelector("#bookDialog");
+const delDialog = document.querySelector("#delDialog");
 const bookForm = document.querySelector("#bookForm");
 const cancelBtn = document.querySelector("#cancelBtn");
 const submitBtn = document.querySelector("#submitBtn");
+const cancelDelBtn = document.querySelector("#cancelDelBtn");
+const submitDelBtn = document.querySelector("#submitDelBtn");
 
 const myLibrary = [];
+let delBookIndex = 0;
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -54,6 +58,15 @@ function displayBooks() {
     read.classList.add("readBtn");
     cardDiv.appendChild(read);
 
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Delete book 🗑️";
+    removeBtn.addEventListener("click", () => {
+      delBookIndex = myLibrary.indexOf(book);
+      delDialog.showModal();
+    });
+    removeBtn.classList.add("removeBtn");
+    cardDiv.appendChild(removeBtn);
+
     booksContainer.appendChild(cardDiv);
   });
   const addBtn = document.createElement("div");
@@ -77,6 +90,11 @@ cancelBtn.addEventListener("click", (e) => {
   bookForm.reset();
 });
 
+cancelDelBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  delDialog.close();
+});
+
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const title = document.querySelector("#title").value;
@@ -89,6 +107,13 @@ submitBtn.addEventListener("click", (e) => {
   displayBooks();
   bookDialog.close();
   bookForm.reset();
+});
+
+submitDelBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  myLibrary.splice(delBookIndex, 1);
+  displayBooks();
+  delDialog.close();
 });
 
 displayBooks();
