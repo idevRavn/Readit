@@ -59,6 +59,14 @@ p {
   cursor: pointer;
 }
 
+.removeBtn {
+  color: red;
+  padding: 1vh 2vh;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .addBtn {
   background-color: black;
   width: 40px;
@@ -70,7 +78,8 @@ p {
   cursor: pointer;
 }
 
-#bookDialog {
+#bookDialog,
+#delDialog {
   border: none;
   border-radius: 10px;
   position: absolute;
@@ -79,7 +88,8 @@ p {
   transform: translate(-50%, -50%);
 }
 
-#bookForm {
+#bookForm,
+#delForm {
   padding: 5vh;
   background-color: white;
 }
@@ -90,6 +100,10 @@ p {
   gap: 1vh;
 }
 
+.formVal > p {
+  color: gray;
+}
+
 .formBtns > button {
   margin-top: 5%;
   padding: 5px 10px;
@@ -98,18 +112,22 @@ p {
   color: white;
 }
 
-#cancelBtn {
+#cancelBtn,
+#cancelDelBtn {
   background-color: hsl(0, 100%, 40%);
 }
 
-#submitBtn {
+#submitBtn,
+#submitDelBtn {
   background-color: hsl(120, 100%, 40%);
 }
 
-#cancelBtn:hover {
+#cancelBtn:hover,
+#cancelDelBtn:hover {
   background-color: hsl(0, 100%, 50%);
 }
 
-#submitBtn:hover {
+#submitBtn:hover,
+#submitDelBtn:hover {
   background-color: hsl(120, 100%, 50%);
 }
