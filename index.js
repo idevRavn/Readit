@@ -2,6 +2,7 @@ const booksContainer = document.querySelector(".main");
 const bookDialog = document.querySelector("#bookDialog");
 const bookForm = document.querySelector("#bookForm");
 const cancelBtn = document.querySelector("#cancelBtn");
+const submitBtn = document.querySelector("#submitBtn");
 
 const myLibrary = [];
 
@@ -22,6 +23,7 @@ book2 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, false);
 addBookToLibrary(book2);
 
 function displayBooks() {
+  booksContainer.textContent = "";
   myLibrary.forEach((book) => {
     const cardDiv = document.createElement("div");
     cardDiv.classList.add("book-card");
@@ -56,6 +58,9 @@ function displayBooks() {
   });
   const addBtn = document.createElement("div");
   addBtn.classList.add("book-card");
+  const addtext = document.createElement("h3");
+  addtext.textContent = "Add a book";
+  addBtn.appendChild(addtext);
   const add = document.createElement("button");
   add.textContent = "+";
   add.addEventListener("click", () => {
@@ -66,10 +71,24 @@ function displayBooks() {
   booksContainer.appendChild(addBtn);
 }
 
-displayBooks();
-
 cancelBtn.addEventListener("click", (e) => {
   e.preventDefault();
   bookDialog.close();
   bookForm.reset();
 });
+
+submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const title = document.querySelector("#title").value;
+  const author = document.querySelector("#author").value;
+  const pages = document.querySelector("#pages").value;
+  const read = document.querySelector("#read").checked;
+
+  const bookToAdd = new Book(title, author, pages, read);
+  addBookToLibrary(bookToAdd);
+  displayBooks();
+  bookDialog.close();
+  bookForm.reset();
+});
+
+displayBooks();
